@@ -11,7 +11,7 @@ import { Button } from '@components/Button'
 export const SignIn = () => {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
-            <VStack flex={1} bg="gray.700" pb={16}>
+            <VStack flex={1} pb={16}>
                 <ImageBackground 
                     source={BackgroudImg}
                     resizeMode='contain'
