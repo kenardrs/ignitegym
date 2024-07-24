@@ -2,12 +2,15 @@ import { TouchableOpacity } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
 
-import { VStack, Icon, HStack, Heading, Text } from 'native-base'
+import { VStack, Icon, HStack, Heading, Text, Image, Box } from 'native-base'
 import { Feather } from '@expo/vector-icons'
 
 import { AppNavigatorRoutesProps } from '@routes/app.routes'
 
 import BodySvg from '@assets/body.svg'
+import SeriesSvg from '@assets/series.svg'
+import RepetitionsSvg from '@assets/repetitions.svg'
+import { Button } from '@components/Button'
 
 export const Exercise = () => {
 
@@ -15,7 +18,7 @@ export const Exercise = () => {
 
     const handleGoBack = () => {
         navigation.goBack()
-    } 
+    }
 
     return (
         <VStack flex={1}>
@@ -36,10 +39,46 @@ export const Exercise = () => {
                             Costas
                         </Text>
                     </HStack>
-
                 </HStack>
             </VStack>
-        
+
+            <VStack p={8}>
+                <Image
+                    w={'full'}
+                    h={80}
+                    source={{ uri: 'https://static.tuasaude.com/media/article/ll/ae/puxada-frontal_63648_l.jpg' }}
+                    alt='Foto do exercício'
+                    mb={3}
+                    resizeMode='cover'
+                    rounded={'lg'}
+                />
+
+                <Box bg={'gray.600'} rounded={'md'} pb={4} px={4}>
+                    <HStack alignItems={'center'} justifyContent={'space-around'} mb={6} mt={5}>
+                        <HStack>
+                            <SeriesSvg />
+
+                            <Text color={'gray.200'} ml={2}>
+                                3 Séries
+                            </Text>
+                        </HStack>
+
+                        <HStack>
+                            <RepetitionsSvg />
+
+                            <Text color={'gray.200'} ml={2}>
+                                12 Repetições
+                            </Text>
+                        </HStack>
+                    </HStack>
+                    
+                    <Button 
+                        title='Marcar como realizado' 
+                    />
+                </Box>
+            </VStack>
+
+
         </VStack>
     )
 }
